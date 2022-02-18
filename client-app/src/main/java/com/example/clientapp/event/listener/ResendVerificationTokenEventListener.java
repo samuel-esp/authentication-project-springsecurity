@@ -21,6 +21,7 @@ public class ResendVerificationTokenEventListener implements ApplicationListener
         VerificationToken token = userService.createNewVerificationToken(event.getToken());
 
         String url = event.getApplicationUrl() + "/verify?token=" + token.getToken();
+
         log.info("New Verification Link: " + url);
     }
 }
